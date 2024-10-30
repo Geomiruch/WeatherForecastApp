@@ -1,0 +1,24 @@
+﻿@model WeatherForecastModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast for @Model.CityName</h1>
+    <p>Condition: @Model.WeatherText</p>
+    <p>Temperature: @Model.Temperature °C</p>
+
+    @if (Model.IsRainExpected)
+    {
+        <p style="color: red;">⚠️ Rain is expected today!</p>
+    }
+
+    <form method="get">
+        <input type="text" name="city" placeholder="Enter city" required />
+        <button type="submit">Get Weather</button>
+    </form>
+</body>
+</html>
